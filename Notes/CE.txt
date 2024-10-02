@@ -1,0 +1,17 @@
+I feel like after HE, it just means that the pixel values are more evenly distributed into new pixel brightness level (0 - 255), and then the CDF is just a way of showing how the pixels brightness level should be mapped to (because there needs to be balance in the image still, as the 1 to 1 mapping would make the image's contrast less balanced) to actually be evenyl distributed in the image
+
+
+More Accurate Defintion:
+HE does the part where the brightness of the pixels are evenly distributed while the CDF is a reflection of the result of HE by accurately mapping the number of pixels to their respective brightness (because the equalized histogram is just the result of how many pixels should be of this brightness and doesn't know the location of which pixels in the image should be changed [imagine just an image where there is 40 pixels of 175 brightness, but where does this brightness go in the image?]. 
+
+Thus we use the CDF as it reflects the equalized histogram's result by mapping the appropriate pixel values (0 - 255) to the new pixel values [it makes the denser regions brighter and the less denser regions at the same brightness. Look at the generated IO curves, denser regions become brighter while less dense regions stagnant and thus can become darker if it falls underneath the straight line, and we compare the IO curve to the straight line, which represents the brightness of the original pixel values])
+
+The CDF is an average out of the result of the HE and the image pixel brightness. It shows what the image's pixel brightness should look like according to the result of the HE.
+
+TLDR: HE evenly distributes the pixel's brightness and the CDF adjusts the image's pixel values accordingly.
+
+
+so less dense regions of pixel luminosity become darker and more dense regions become brighter
+
+
+Also take note of the threshold levels, higher threshold level in the lower luminosity means that there is more room for contrast enhancement for the lower luminosity, and lower threshold level for higher luminosity mean that there is less room for contrast enhancement for the higher luminosity.

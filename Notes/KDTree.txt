@@ -1,0 +1,9 @@
+TLDR; kd tree allows for binary search across k dimensions by alternating between the different dimensions and searching through one half of the dimension when selecting a subtree
+
+
+Building a KD-Tree for Strictly Increasing Curves
+Given that your curves are strictly increasing, you can directly use the median point without sorting. This will reduce the complexity of building the KD-Tree.
+
+
+For each current in the 
+no im not sure if you understand what im trying to do, im going through 256 x values and i want to compare teh current curve's y value at the current x value with the other curves y value's at same the current x value and in the end determining which curve is the closest. i already have a brute force method, but i want to know if there is a faster way to to This
